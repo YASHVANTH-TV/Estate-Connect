@@ -1,0 +1,49 @@
+<div class="control-panel">
+    <h2>Admin Control Panel</h2>
+    <br>
+    <div class="status-cards">
+        <div class="card">Total Feedbacks <span>{{ feedbackCount }}</span></div>
+        <div class="card">Total Inquiries <span>{{ inquiryCount }}</span></div>
+        <div class="card">Total Properties <span>{{ propertyCount }}</span></div>
+        <div class="card">Unresolved Inquiries <span>{{ unresolvedCount }}</span></div>
+        <div class="card">High Priority Inquiries <span>{{ highPriorityCount }}</span></div>
+    </div>
+
+    <div class="detailed-info">
+        <h3>Detailed Information</h3>
+        <table *ngIf="properties && properties.length > 0; else noData">
+            <thead>
+                <tr>
+
+                    <th>Title</th>
+                    <th>Location</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Type</th>
+                    <th>Builder</th>
+                    <th>Floor</th>
+                    <th>Rise-Type</th>
+                    <th>Vaastu</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prop of properties">
+                    <td>{{ prop.title }}</td>
+                    <td>{{ prop.location }}</td>
+                    <td>{{ prop.price }}</td>
+                    <td>{{ prop.status }}</td>
+                    <td>{{ prop.type }}</td>
+                    <td>{{ prop.builder }}</td>
+                    <td>{{ prop.floor }}</td>
+                    <td>{{ prop.riseType }}</td>
+                    <td>{{ prop.vaastu }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <ng-template #noData>
+            <p class="no-data">No data available</p>
+        </ng-template>
+    </div>
+</div>
