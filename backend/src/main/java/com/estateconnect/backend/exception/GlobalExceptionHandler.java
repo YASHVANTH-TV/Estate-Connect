@@ -12,4 +12,14 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> getUserAlreadyExistsException(UserAlreadyExistsException e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.valueOf(409));
     }
+
+    @ExceptionHandler(NoPropertiesFoundException.class)
+    public ResponseEntity<String> getNoPropertiesFoundException(NoPropertiesFoundException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.valueOf(404));
+    }
+
+    @ExceptionHandler(DuplicatePropertyException.class)
+    public ResponseEntity<String> getDuplicatePropertyException(DuplicatePropertyException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.valueOf(409));
+    }
 }
