@@ -27,4 +27,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> getNoInquiriesFoundException(NoInquiriesFoundException e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.valueOf(404));
     }
+
+    @ExceptionHandler(NoFeedbacksFoundException.class)
+    public ResponseEntity<String> getNoFeedbacksFoundException(NoFeedbacksFoundException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.valueOf(404));
+    }
 }
