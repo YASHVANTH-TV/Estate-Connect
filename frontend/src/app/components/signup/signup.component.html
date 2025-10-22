@@ -1,0 +1,66 @@
+<div class="signup-container">
+    <div class="left-container">
+        <img src="" alt="Estate Connect">
+    </div>
+
+    <div class="right-container">
+        <h2>Signup</h2>
+        <form [formGroup]="signupForm" (ngSubmit)="signup()">
+
+            <input type="text" name="firstName" id="firstName" placeholder="First Name" formControlName="firstName" />
+            <div *ngIf="signupForm.get('firstName').touched">
+                <small *ngIf="signupForm.get('firstName').errors?.required">First Name is required.</small>
+            </div>
+
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name" formControlName="lastName" />
+            <div *ngIf="signupForm.get('lastName').touched">
+                <small *ngIf="signupForm.get('lastName').errors?.required">Last Name is required.</small>
+            </div>
+
+            <input type="email" name="email" id="email" placeholder="Email" formControlName="email" />
+            <div *ngIf="signupForm.get('email').touched">
+                <small *ngIf="signupForm.get('email').errors?.required">Email is required</small>
+                <small *ngIf="signupForm.get('email').errors?.pattern">Please enter a valid email</small>
+            </div>
+
+            <input type="text" name="mobileNumber" id="mobileNumber" placeholder="Mobile"
+                formControlName="mobileNumber" />
+            <div *ngIf="signupForm.get('mobileNumber').touched">
+                <small *ngIf="signupForm.get('mobileNumber').errors?.required">Mobile Number is required</small>
+                <small *ngIf="signupForm.get('mobileNumber').errors?.pattern">Please enter valid mobile number</small>
+            </div>
+
+            <select name="role" id="role" formControlName="role">
+                <option value="">Select Role</option>
+                <option value="USER">User</option>
+                <option value="ADMIN">Admin</option>
+            </select>
+            <div *ngIf="signupForm.get('role').touched">
+                <small *ngIf="signupForm.get('role').errors?.required">User Role is required</small>
+            </div>
+
+            <input type="password" name="password" id="password" placeholder="Password" formControlName="password" />
+            <div *ngIf="signupForm.get('password').touched">
+                <small *ngIf="signupForm.get('password').errors?.required">Password is required</small>
+                <small *ngIf="signupForm.get('password').errors?.minlength">Password must be atleast 6
+                    characters</small>
+            </div>
+
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password"
+                formControlName="confirmPassword" />
+            <div *ngIf="signupForm.get('confirmPassword').touched">
+                <small *ngIf="signupForm.errors?.mismatch">Passwords must be same</small>
+            </div>
+
+            <button>Signup</button>
+            <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
+        </form>
+    </div>
+</div>
+
+<div class="modal-overlay" *ngIf="isSubmitted">
+    <div class="modal-success">
+        <span class="modal-message">{{successMessage}}</span>
+        <button (click)="navigateToLogin()">Ok</button>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<p>login works!</p>
+<!-- YASH -->
+
+<div class="signup-container">
+
+    <div class="left-container">
+        <img src="" alt="Estate Connect">
+    </div>
+
+    <div class="right-container">
+
+        <h2>Login</h2>
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+            <input type="email" name="email" id="email" placeholder="Email" formControlName="email" />
+            <div *ngIf="loginForm.get('email').touched">
+                <small *ngIf="loginForm.get('email').errors?.required">Email is required</small>
+                <small *ngIf="loginForm.get('email').errors?.pattern">Please enter a valid email</small>
+            </div>
+
+            <input type="password" name="password" id="password" placeholder="Password" formControlName="password" />
+            <div *ngIf="loginForm.get('password').touched">
+                <small *ngIf="loginForm.get('password').errors?.required">Password is required</small>
+                <small *ngIf="loginForm.get('password').errors?.minlength">Password must be atleast 6 characters</small>
+            </div>
+            <div *ngIf="incorrectPassword">
+                <small>The Password you entered is incorrect.</small>
+            </div>
+
+            <button>Login</button>
+
+            <p>Don't have an account? <span><a routerLink="/signup">Signup</a></span></p>
+
+        </form>
+
+    </div>
+
+</div>
