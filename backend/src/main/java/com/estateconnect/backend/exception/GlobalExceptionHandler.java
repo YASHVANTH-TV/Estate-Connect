@@ -22,4 +22,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> getDuplicatePropertyException(DuplicatePropertyException e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.valueOf(409));
     }
+
+    @ExceptionHandler(NoInquiriesFoundException.class)
+    public ResponseEntity<String> getNoInquiriesFoundException(NoInquiriesFoundException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.valueOf(404));
+    }
 }
