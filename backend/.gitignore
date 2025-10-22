@@ -31,3 +31,25 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# --- Environment and Security ---
+.env
+application.properties
+application.yml
+application-dev.yml
+application-prod.yml
+*.secret
+*.key
+*.pem
+
+# --- Logs and temporary files ---
+*.log
+*.tmp
+*.bak
+hs_err_pid*
+
+# --- OS-specific files ---
+# macOS
+.DS_Store
+# Windows
+Thumbs.db
