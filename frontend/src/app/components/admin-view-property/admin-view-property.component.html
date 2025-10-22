@@ -1,0 +1,60 @@
+<div class="admin-properties-container">
+    <h2 class="heading">Manage Properties</h2>
+    <div class="filter-bar">
+        <div>
+            <label for="searchProperty">Search by:</label>
+            <input type="text" id="searchProperty" placeholder="Property title" [(ngModel)]="searchTerm"
+                (ngModelChange)="applyFilters()" />
+        </div>
+        <div>
+            <label for="categoryFilter">Filter by type:</label>
+            <select id="categoryFilter" [(ngModel)]="selectedType" (change)="applyFilters()">
+                <option value="">All Types</option>
+                <option *ngFor="let type of uniqueTypes" [value]="type">{{ type }}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="no-properties" *ngIf="filteredProperties.length === 0">
+        No properties available. Add some properties to view here.
+    </div>
+
+    <table class="properties-table" *ngIf="filteredProperties.length > 0">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Location</th>
+                <th>Price</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let prop of filteredProperties; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ prop.title }}</td>
+                <td>{{ prop.description }}</td>
+                <td>{{ prop.location }}</td>
+                <td>{{ prop.price | currency:'USD':true }}</td>
+                <td>{{ prop.type }}</td>
+                <td>{{ prop.status }}</td>
+                <td>
+                    <button class="action-btn edit-btn" (click)="editProperty(prop.propertyId)">Edit</button>
+                    <button class="action-btn delete-btn" (click)="openDeleteModal(prop)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="modal-backdrop" *ngIf="deleteTarget">
+        <div class="modal">
+            <p>Are you sure you want to delete this property?</p>
+            <div class="modal-actions">
+                <button class="modal-btn danger" (click)="confirmDelete()">Yes, Delete</button>
+                <button class="modal-btn" (click)="closeDeleteModal()">Cancel</button>
+            </div>
+        </div>
+    </div>

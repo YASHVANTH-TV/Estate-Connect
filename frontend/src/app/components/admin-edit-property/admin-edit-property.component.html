@@ -1,0 +1,50 @@
+<div class="edit-property-container">
+    <h2 class="edit-title">Edit Property</h2>
+    <form #propertyForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input id="title" name="title" type="text" [(ngModel)]="property.title" required />
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" [(ngModel)]="property.description" rows="2"
+                required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input id="location" name="location" type="text" [(ngModel)]="property.location" required />
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input id="price" name="price" type="number" [(ngModel)]="property.price" min="0" required />
+        </div>
+
+        <div class="form-group">
+            <label for="type">Type:</label>
+            <select id="type" name="type" [(ngModel)]="property.type" required>
+                <option value="Residential">Residential</option>
+                <option value="Commercial">Commercial</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status" [(ngModel)]="property.status" required>
+                <option value="Available">Available</option>
+                <option value="Sold">Sold</option>
+            </select>
+        </div>
+
+        <button class="update-btn" type="submit" [disabled]="propertyForm.invalid">
+            Update Property
+        </button>
+    </form>
+
+    <div *ngIf="successMessage" class="success-popup">
+        {{ successMessage }}
+        <button class="modal-btn" (click)="closePopup()">OK</button>
+    </div>
+</div>

@@ -1,0 +1,119 @@
+<div class="container">
+    <form #propertyForm="ngForm" (ngSubmit)="onSubmit(propertyForm)">
+        <h2>Add New Property</h2>
+
+        <!-- Title -->
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" name="title" [(ngModel)]="property.title" required />
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea name="description" [(ngModel)]="property.description" required></textarea>
+        </div>
+
+        <!-- Location -->
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" name="location" [(ngModel)]="property.location" required />
+        </div>
+
+        <!-- Price -->
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="number" name="price" [(ngModel)]="property.price" required min="0" />
+        </div>
+
+        <!-- Type -->
+        <div class="form-group">
+            <label for="type">Type:</label>
+            <select name="type" [(ngModel)]="property.type" required>
+                <option value="">Select Type</option>
+                <option value="Residential">Residential</option>
+                <option value="Commercial">Commercial</option>
+            </select>
+        </div>
+
+        <!-- Subtype (Residential only) -->
+        <div class="form-group" *ngIf="property.type === 'Residential'">
+            <label for="subType">Subtype:</label>
+            <select name="subType" [(ngModel)]="property.subType" required>
+                <option value="">Select Subtype</option>
+                <option value="Villa">Villa</option>
+                <option value="Flat">Flat</option>
+            </select>
+        </div>
+
+        <!-- Technology Type -->
+        <div class="form-group"
+            *ngIf="(property.type === 'Commercial') || (property.type === 'Residential' && property.subType === 'Flat')">
+            <label for="techType">Technology Type:</label>
+            <select name="techType" [(ngModel)]="property.techType" required>
+                <option value="">Select Technology Type</option>
+                <option value="Brick">Brick</option>
+                <option value="Mivan">Mivan</option>
+            </select>
+        </div>
+
+        <!-- Rise Type (Mivan only) -->
+        <div class="form-group" *ngIf="property.techType === 'Mivan'">
+            <label for="riseType">Rise Type:</label>
+            <select name="riseType" [(ngModel)]="property.riseType" required>
+                <option value="">Select Rise Type</option>
+                <option value="High-rise">High-rise</option>
+                <option value="Low-rise">Low-rise</option>
+            </select>
+        </div>
+
+        <!-- Floor -->
+        <div class="form-group" *ngIf="shouldShowFloor()">
+            <label for="floor">Floor:</label>
+            <input type="number" name="floor" [(ngModel)]="property.floor" required [min]="0" [max]="getMaxFloor()" />
+            <small *ngIf="property.floor > getMaxFloor()" class="error-message">
+                Floor should be less than {{ getMaxFloor() }}
+            </small>
+        </div>
+
+        <!-- Vaastu -->
+        <div class="form-group">
+            <label for="vaastu">Vaastu:</label>
+            <select name="vaastu" [(ngModel)]="property.vaastu" required>
+                <option value="">Select Vaastu</option>
+                <option value="East">East Facing</option>
+                <option value="West">West Facing</option>
+                <option value="North">North Facing</option>
+                <option value="South">South Facing</option>
+            </select>
+        </div>
+
+        <!-- Builder -->
+        <div class="form-group">
+            <label for="builder">Builder:</label>
+            <input type="text" name="builder" [(ngModel)]="property.builder" required />
+        </div>
+
+        <!-- Status -->
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select name="status" [(ngModel)]="property.status" required>
+                <option value="Available">Available</option>
+                <option value="Pending">Pending</option>
+                <option value="Sold">Sold</option>
+            </select>
+        </div>
+
+        <button class="btn" type="submit">Add Property</button>
+
+        <!-- Messages -->
+        <div *ngIf="successMessage" class="success-message">
+            <small>{{ successMessage }}</small>
+        </div>
+        <div *ngIf="errorMessage" class="error-message">
+            <small>{{ errorMessage }}</small>
+        </div>
+    </form>
+
+    <button class="btn close-btn" *ngIf="successMessage || errorMessage" (click)="onClose()">Close</button>
+</div>
