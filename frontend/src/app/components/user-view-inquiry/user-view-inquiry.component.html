@@ -1,0 +1,47 @@
+<div class="inquiries-container">
+    <h2>Your Inquiries</h2>
+
+    <div class="inquiries-table-wrapper">
+        <!-- Data Table -->
+        <!-- <table *ngIf="inquiries && inquiries.length > 0; else noData"> -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>Message</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Admin Response</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let inquiry of inquiries">
+                    <td>{{ inquiry.property.title }}</td>
+
+                    <td>{{ inquiry.message }}</td>
+                    <td>{{ inquiry.priority }}</td>
+                    <td>
+                        <span [ngClass]="{
+                  resolved: inquiry.status === 'Resolved',
+                  pending: inquiry.status === 'Pending'
+                }">
+                            {{ inquiry.status }}
+                        </span>
+                    </td>
+                    <td>
+                        <span *ngIf="inquiry.adminResponse; else noResponse">
+                            {{ inquiry.adminResponse }}
+                        </span>
+                        <ng-template #noResponse>
+                            <span class="no-response">No response yet</span>
+                        </ng-template>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- No Inquiries Message -->
+        <ng-template #noData>
+            <div class="no-inquiries">No Data Found</div>
+        </ng-template>
+    </div>
+</div>

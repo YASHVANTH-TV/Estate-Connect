@@ -1,0 +1,38 @@
+<div class="card">
+    <h2 class="card-title">Submit Your Inquiry</h2>
+    <form (ngSubmit)="onSubmit(inquiryForm)" #inquiryForm="ngForm">
+
+        <div class="form-group">
+            <label for="property">Property:</label>
+            <input id="property" name="property" type="text" [(ngModel)]="inquiry.property.title" required />
+        </div>
+
+        <div class="form-group">
+            <label for="mobileNumber">Contact Number:</label>
+            <input id="mobileNumber" name="mobileNumber" type="text" [(ngModel)]="inquiry.user.mobileNumber" required />
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <input id="message" name="message" type="text" [(ngModel)]="inquiry.message" required />
+        </div>
+
+        <div class="form-group">
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority" [(ngModel)]="inquiry.priority" required>
+                <option value="Normal">Normal</option>
+                <option value="High">High</option>
+            </select>
+        </div>
+
+        <button class="submit-btn" type="submit">Submit Inquiry</button>
+    </form>
+
+    <!-- Popup Modal -->
+    <div class="custom-modal" *ngIf="successMessage">
+        <div class="modal-content">
+            <p>Inquiry submitted successfully!</p>
+            <button (click)="closePopup()">OK</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="feedback-container">
+    <h2>My Feedbacks</h2>
+    <div *ngIf="isLoading" class="loading">Loading...</div>
+    <div *ngIf="error" class="error">{{ error }}</div>
+    <table *ngIf="!isLoading && feedbacks.length" class="feedback-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Message</th>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Property</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let feedback of feedbacks">
+                <td>{{ feedback.feedbackId }}</td>
+                <td>{{ feedback.feedbackText }}</td>
+                <td>{{ feedback.date | date:'mediumDate' }}</td>
+                <td>{{ feedback.category }}</td>
+                <td>{{ feedback.property.title }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="!isLoading && !feedbacks.length" class="no-feedback">
+        No feedback submitted yet.
+    </div>
+</div>
