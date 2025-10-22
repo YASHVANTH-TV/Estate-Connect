@@ -1,0 +1,15 @@
+<p>adminnav works!</p>
+<nav class="navbar">
+    <div class="brand">EstateConnect</div>
+    <div class="links">
+        <span class="highlight">Welcome {{firstName}}</span>
+        <a routerLink="/home">Home</a>
+        <a routerLink="/admin-control-panel">Control Panel</a>
+        <a routerLink="/admin-view-properties">View Properties</a>
+        <a routerLink="/admin-add-property">Add Property</a>
+        <a routerLink="/admin-view-inquiries">Inquiries</a>
+        <a routerLink="/admin-view-feedbacks">View Feedback</a>
+
+        <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+</nav>

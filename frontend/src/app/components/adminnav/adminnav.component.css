@@ -1,0 +1,75 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1d1d1d;
+    padding: 10px 24px;
+    margin-bottom: 16px;
+    font-family: 'Arial', sans-serif;
+}
+
+.brand {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #f4f3ed;
+    letter-spacing: 1px;
+    font-family: 'Arial', sans-serif;
+}
+
+.brand.user {
+    color: #f6be18;
+    font-family: 'Arial', sans-serif;
+}
+
+.brand.user span {
+    font-weight: bold;
+    color: #f6be18;
+    font-family: 'Arial', sans-serif;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-family: 'Arial', sans-serif;
+}
+
+.highlight {
+    background: #222;
+    border: 1px solid #f6be18;
+    color: #f6be18;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+}
+
+.links a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0 6px;
+    transition: color 0.2s;
+    font-family: 'Arial', sans-serif;
+}
+
+.links a:hover {
+    color: #eee237;
+    font-family: 'Arial', sans-serif;
+}
+
+.logout-btn {
+    background: #f6be18;
+    color: #1d1d1d;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background: #cfa600;
+}
