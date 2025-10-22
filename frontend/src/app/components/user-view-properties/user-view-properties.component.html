@@ -1,0 +1,83 @@
+<div class="property-container">
+    <h2>Explore Properties</h2>
+
+    <!-- Filter Section -->
+    <div class="filters">
+        <!-- Search by Title -->
+        <input type="text" [(ngModel)]="searchTitle" (input)="applyFilters()" placeholder="Search by Title" />
+
+        <!-- Search by Location -->
+        <input type="text" [(ngModel)]="searchLocation" (input)="applyFilters()" placeholder="Search by Location" />
+
+        <!-- Main Type -->
+        <select [(ngModel)]="selectedType" (change)="onTypeChange()">
+            <option value="">Filter by Type</option>
+            <option value="Residential">Residential</option>
+            <option value="Commercial">Commercial</option>
+        </select>
+
+        <!-- Sub-type for Residential (Villa / Flat) -->
+        <select *ngIf="selectedType === 'Residential'" [(ngModel)]="selectedSubType" (change)="onSubTypeChange()">
+            <option value="">Select Sub-Type</option>
+            <option value="Villa">Villa</option>
+            <option value="Flat">Flat</option>
+        </select>
+
+        <!-- Technology Type -->
+        <select *ngIf="showTechType" [(ngModel)]="selectedTechType" (change)="onTechTypeChange()">
+            <option value="">Technology Type</option>
+            <option value="Brick">Brick</option>
+            <option value="Mivan">Mivan</option>
+        </select>
+
+        <!-- Rise Type -->
+        <select *ngIf="showRiseType" [(ngModel)]="selectedRise" (change)="onRiseTypeChange()">
+            <option value="">High-rise / Low-rise</option>
+            <option value="High-rise">High-rise</option>
+            <option value="Low-rise">Low-rise</option>
+        </select>
+
+        <!-- Floor Range -->
+        <select *ngIf="showFloorRange" [(ngModel)]="selectedFloorRange" (change)="applyFilters()">
+            <option value="">Select Floor Range</option>
+            <option *ngFor="let range of floorRangeOptions" [value]="range.value">
+                {{ range.label }}
+            </option>
+        </select>
+
+        <!-- Vaastu -->
+        <select [(ngModel)]="selectedVaastu" (change)="applyFilters()">
+            <option value="">Filter by Vaastu</option>
+            <option value="East">East Facing</option>
+            <option value="West">West Facing</option>
+            <option value="North">North Facing</option>
+            <option value="South">South Facing</option>
+        </select>
+
+        <!-- Search by Builder -->
+        <input type="text" [(ngModel)]="searchBuilder" (input)="applyFilters()" placeholder="Search by Builder" />
+    </div>
+
+    <!-- Property Cards -->
+    <div *ngIf="filteredProperties.length > 0; else noProperties">
+        <div class="property-card" *ngFor="let property of filteredProperties">
+            <h3>{{ property.title }}</h3>
+            <p>{{ property.description }}</p>
+            <p><strong>Location:</strong> {{ property.location }}</p>
+            <p><strong>Price:</strong> ${{ property.price | number }}</p>
+            <p><strong>Type:</strong> {{ property.type }}</p>
+            <p><strong>Status:</strong> {{ property.status }}</p>
+            <p *ngIf="property.vaastu"><strong>Vaastu:</strong> {{ property.vaastu }}</p>
+            <p *ngIf="property.riseType"><strong>Rise Type:</strong> {{ property.riseType }}</p>
+            <p *ngIf="property.floor !== undefined"><strong>Floor:</strong> {{ property.floor }}</p>
+            <p *ngIf="property.techType"><strong>Tech Type:</strong> {{ property.techType }}</p>
+            <p *ngIf="property.builder"><strong>Builder:</strong> {{ property.builder }}</p>
+            <button class="inquire-btn" (click)="navigateToAddInquiry(property.propertyId)">Inquire</button>
+        </div>
+    </div>
+</div>
+
+<!-- No Properties Message -->
+<ng-template #noProperties>
+    <p class="noprop">No properties available at the corner. Please check back later.</p>
+</ng-template>
