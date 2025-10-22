@@ -1,0 +1,116 @@
+.container {
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 1000px;
+    background: #000;
+    /* Black background */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #0002;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    /* White text */
+}
+
+.he {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #fff;
+    /* White heading */
+    font-family: 'Arial', sans-serif;
+}
+
+.filter-section {
+    margin-bottom: 18px;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    /* White filter labels */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    /* White table text */
+}
+
+th,
+td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #efc950;
+    font-family: 'Arial', sans-serif;
+}
+
+th {
+    background-color: #efc950;
+    color: #222;
+    font-family: 'Arial', sans-serif;
+}
+
+tr:nth-child(even) {
+    background: #1a1a1a;
+    /* Slightly lighter black for contrast */
+}
+
+.action-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    margin: 0 4px;
+    padding: 3px 10px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.action-btn:hover {
+    background: #218838;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 28px 36px;
+    border-radius: 8px;
+    min-width: 310px;
+    text-align: center;
+    box-shadow: 0 2px 8px #0004;
+    font-family: 'Arial', sans-serif;
+    color: #000;
+    /* Modal content text stays black for readability */
+}
+
+.modal-content h4 {
+    margin: 0 0 12px 0;
+    color: #222;
+    font-family: 'Arial', sans-serif;
+}
+
+.modal-content button {
+    margin-top: 18px;
+    background: #e02525;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 6px 22px;
+    cursor: pointer;
+}

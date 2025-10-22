@@ -1,0 +1,60 @@
+<div class="container">
+    <h2 class="he">Feedbacks Received</h2>
+    <div class="filter-section">
+        <label for="categorySelect">Filter by Category:</label>
+        <select id="categorySelect" [(ngModel)]="selectedCategory" (change)="filterByCategory()">
+            <option value="">All Categories</option>
+            <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+        </select>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>User Name</th>
+                <th>Feedback</th>
+                <th>Posted Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="filteredFeedbacks.length === 0">
+                <td colspan="5">No feedbacks found</td>
+            </tr>
+            <tr *ngFor="let fb of filteredFeedbacks; let i=index">
+                <td>{{ i+1 }}</td>
+                <td>{{ fb.user?.username }}</td>
+                <td>{{ fb.feedbackText }}</td>
+                <td>{{ fb.date | date:'dd/MM/yyyy' }}</td>
+                <td>
+                    <button (click)="showUserProfile(fb)" class="action-btn">Show Profile</button>
+                    <button (click)="viewPropertyInfo(fb)" class="action-btn">View Property Info</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- User Profile Modal -->
+    <div class="modal" *ngIf="profileModalOpen">
+        <div class="modal-content">
+            <h4>User Details</h4>
+            <div>Email: {{selectedFeedback.user?.email}}</div>
+            <div>User Name: {{selectedFeedback.user?.username}}</div>
+            <div>Mobile: {{selectedFeedback.user?.mobileNumber}}</div>
+            <button (click)="closeProfileModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Property Info Modal -->
+    <div class="modal" *ngIf="propertyModalOpen">
+        <div class="modal-content">
+            <h4>Property Details</h4>
+            <div>Title: {{selectedFeedback.property?.title}}</div>
+            <div>Location: {{selectedFeedback.property?.location}}</div>
+            <div>Price: {{selectedFeedback.property?.price}}</div>
+            <div>Description: {{selectedFeedback.property?.description}}</div>
+            <button (click)="closePropertyModal()">Close</button>
+        </div>
+    </div>
+</div>

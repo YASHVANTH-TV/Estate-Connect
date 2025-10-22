@@ -1,0 +1,93 @@
+<div class="inquiry-container">
+    <h2 class="anmol">Manage Property Inquiries</h2>
+
+    <!-- Search & Filters -->
+    <div class="filters">
+        <input type="text" placeholder="Search by Property Name" [(ngModel)]="searchText" (input)="filterInquiries()" />
+        <select [(ngModel)]="priorityFilter" (change)="filterInquiries()">
+            <option value="">All Priorities</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+        <select [(ngModel)]="statusFilter" (change)="filterInquiries()">
+            <option value="">All Statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Resolved">Resolved</option>
+            <option value="Closed">Closed</option>
+        </select>
+    </div>
+
+    <!-- No Data -->
+    <div *ngIf="filteredInquiries.length === 0" class="no-data">
+        <h3>No inquiries found.</h3>
+    </div>
+
+    <!-- Inquiries Table -->
+    <table *ngIf="filteredInquiries.length > 0" class="inquiry-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Property</th>
+                <th>Message</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Inquiry Date</th>
+                <th>Contact</th>
+                <th>Admin Response</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let inquiry of filteredInquiries">
+                <td>{{ inquiry.inquiryId }}</td>
+                <td>{{ inquiry.user?.username }}</td>
+                <td>{{ inquiry.property?.title }}</td>
+                <td>{{ inquiry.message }}</td>
+                <td>
+                    <select [(ngModel)]="inquiry.status" (change)="updateStatus(inquiry)">
+                        <option *ngFor="let status of statusList" [value]="status">
+                            {{ status }}
+                        </option>
+                    </select>
+                </td>
+                <td>{{ inquiry.priority }}</td>
+                <td>{{ inquiry.inquiryDate | date:'yyyy-MM-dd' }}</td>
+                <td>{{ inquiry.user.mobileNumber }}</td>
+                <td>
+                    <span *ngIf="inquiry.adminResponse; else noResponse">
+                        {{ inquiry.adminResponse }}<br>
+                        <small *ngIf="inquiry.responseDate">(at {{ inquiry.responseDate | date:'yyyy-MM-dd' }})</small>
+                    </span>
+                    <ng-template #noResponse><span class="no-response">-</span></ng-template>
+                </td>
+                <td>
+                    <button (click)="openResponseModal(inquiry)">Add Response</button>
+
+                    <button class="delete-btn" (click)="confirmDelete(inquiry)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal" *ngIf="showDeleteModal">
+    <div class="modal-content">
+        <p>Are you sure you want to delete this inquiry?</p>
+        <button (click)="deleteInquiry()">Yes, Delete</button>
+        <button (click)="closeDeleteModal()">Cancel</button>
+    </div>
+</div>
+
+<!-- Response Modal -->
+<div class="modal" *ngIf="showResponseModal">
+    <div class="modal-content">
+        <h4>Add Response</h4>
+        <textarea [(ngModel)]="responseText" placeholder="Enter your response..."></textarea>
+        <br />
+        <button (click)="sendResponse()">Submit</button>
+        <button (click)="closeResponseModal()">Cancel</button>
+    </div>
+</div>

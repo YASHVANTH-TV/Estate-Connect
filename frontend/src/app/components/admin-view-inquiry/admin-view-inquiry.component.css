@@ -1,0 +1,129 @@
+.inquiry-container {
+    padding: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #f5f5f5;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-family: 'Arial', sans-serif;
+}
+
+.anmol {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 24px;
+    color: #f7b731;
+}
+
+.filters {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filters input,
+.filters select {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #2c2c2c;
+    color: #fff;
+    font-size: 14px;
+}
+
+.inquiry-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.inquiry-table th {
+    background-color: #f7b731;
+    color: #222;
+    padding: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ddd;
+}
+
+.inquiry-table td {
+    background-color: #2c2c2c;
+    color: #f5f5f5;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    vertical-align: middle;
+}
+
+.no-data {
+    margin-top: 40px;
+    text-align: center;
+    color: #b2bec3;
+    font-size: 20px;
+}
+
+button {
+    margin: 4px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    background: #f7b731;
+    color: #222;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+
+
+button:hover {
+    background: #fdcb6e;
+    color: #000;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 32px;
+    border-radius: 10px;
+    min-width: 320px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-family: 'Arial', sans-serif;
+    resize: vertical;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    /* Red */
+    color: #fff;
+    font-weight: bold;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+    /* Darker red on hover */
+    color: #fff;
+}
