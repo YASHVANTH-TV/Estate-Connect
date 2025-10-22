@@ -49,7 +49,6 @@ export class UserAddInquiryComponent implements OnInit {
         console.error(error);
       }
     });
-
     this.userId = +localStorage.getItem('userId');
     this.inquiry.user.userId = this.userId;
   }

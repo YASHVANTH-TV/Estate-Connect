@@ -3,12 +3,10 @@
     padding: 20px;
     max-width: 1000px;
     background: #000;
-    /* Black background */
     border-radius: 8px;
     box-shadow: 0 2px 8px #0002;
     font-family: 'Arial', sans-serif;
     color: #fff;
-    /* White text */
 }
 
 .he {
@@ -18,7 +16,6 @@
 h2 {
     margin-bottom: 20px;
     color: #fff;
-    /* White heading */
     font-family: 'Arial', sans-serif;
 }
 
@@ -26,7 +23,6 @@ h2 {
     margin-bottom: 18px;
     font-family: 'Arial', sans-serif;
     color: #fff;
-    /* White filter labels */
 }
 
 table {
@@ -35,7 +31,6 @@ table {
     margin-bottom: 15px;
     font-family: 'Arial', sans-serif;
     color: #fff;
-    /* White table text */
 }
 
 th,
@@ -54,7 +49,6 @@ th {
 
 tr:nth-child(even) {
     background: #1a1a1a;
-    /* Slightly lighter black for contrast */
 }
 
 .action-btn {
@@ -72,7 +66,6 @@ tr:nth-child(even) {
     background: #218838;
 }
 
-/* Modal Styles */
 .modal {
     position: fixed;
     left: 0;
@@ -96,7 +89,6 @@ tr:nth-child(even) {
     box-shadow: 0 2px 8px #0004;
     font-family: 'Arial', sans-serif;
     color: #000;
-    /* Modal content text stays black for readability */
 }
 
 .modal-content h4 {

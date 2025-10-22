@@ -28,10 +28,9 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.loginFormData = this.loginForm.value;
       this.authService.login(this.loginFormData).subscribe((result) => {
-        // localStorage.setItem('email', this.loginFormData.email);
         this.router.navigate(['/home']);
       }, (error) => {
-        // this.incorrectPassword = true;
+        this.incorrectPassword = true;
         console.log(error);
       })
     }

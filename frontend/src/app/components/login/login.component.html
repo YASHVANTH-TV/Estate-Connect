@@ -1,17 +1,10 @@
-<!-- YASH -->
-
 <div class="signup-container">
-
     <div class="left-container">
         <img src="" alt="Estate Connect">
     </div>
-
     <div class="right-container">
-
         <h2>Login</h2>
-
         <form [formGroup]="loginForm" (ngSubmit)="login()">
-
             <input type="email" name="email" id="email" placeholder="Email" formControlName="email" />
             <div *ngIf="loginForm.get('email').touched">
                 <small *ngIf="loginForm.get('email').errors?.required">Email is required</small>
@@ -32,7 +25,5 @@
             <p>Don't have an account? <span><a routerLink="/signup">Signup</a></span></p>
 
         </form>
-
     </div>
-
 </div>

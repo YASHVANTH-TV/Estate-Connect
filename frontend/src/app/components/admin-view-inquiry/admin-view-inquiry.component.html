@@ -1,7 +1,6 @@
 <div class="inquiry-container">
     <h2 class="anmol">Manage Property Inquiries</h2>
 
-    <!-- Search & Filters -->
     <div class="filters">
         <input type="text" placeholder="Search by Property Name" [(ngModel)]="searchText" (input)="filterInquiries()" />
         <select [(ngModel)]="priorityFilter" (change)="filterInquiries()">
@@ -18,12 +17,10 @@
         </select>
     </div>
 
-    <!-- No Data -->
     <div *ngIf="filteredInquiries.length === 0" class="no-data">
         <h3>No inquiries found.</h3>
     </div>
 
-    <!-- Inquiries Table -->
     <table *ngIf="filteredInquiries.length > 0" class="inquiry-table">
         <thead>
             <tr>
@@ -64,7 +61,6 @@
                 </td>
                 <td>
                     <button (click)="openResponseModal(inquiry)">Add Response</button>
-
                     <button class="delete-btn" (click)="confirmDelete(inquiry)">Delete</button>
                 </td>
             </tr>
@@ -72,7 +68,6 @@
     </table>
 </div>
 
-<!-- Delete Confirmation Modal -->
 <div class="modal" *ngIf="showDeleteModal">
     <div class="modal-content">
         <p>Are you sure you want to delete this inquiry?</p>
@@ -81,7 +76,6 @@
     </div>
 </div>
 
-<!-- Response Modal -->
 <div class="modal" *ngIf="showResponseModal">
     <div class="modal-content">
         <h4>Add Response</h4>

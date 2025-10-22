@@ -69,7 +69,6 @@ h2 {
     font-family: 'Arial', sans-serif;
 }
 
-/* Filters Section */
 .filters {
     display: flex;
     flex-wrap: wrap;
@@ -118,7 +117,6 @@ h2 {
     font-family: 'Arial', sans-serif;
 }
 
-/* Property Cards Layout */
 .property-container>div {
     display: flex;
     flex-wrap: wrap;
@@ -127,7 +125,6 @@ h2 {
     font-family: 'Arial', sans-serif;
 }
 
-/* Individual Property Card */
 .property-card {
     background: #181818;
     color: #f6be18;
@@ -149,7 +146,6 @@ h2 {
     font-family: 'Arial', sans-serif;
 }
 
-/* Inquire Button */
 .inquire-btn {
     background: #f6be18;
     color: #181818;

@@ -2,69 +2,53 @@
     margin: 32px auto;
     max-width: 900px;
     background: #000;
-    /* black background */
     border-radius: 8px;
     padding: 32px;
     box-shadow: 0 2px 12px rgba(255, 255, 0, 0.1);
-    /* subtle yellow glow */
     font-family: 'Arial', sans-serif;
     color: #fff;
-    /* white text for all content */
 }
 
-/* Heading */
 .feedback-container h2 {
     text-align: center;
     margin-bottom: 24px;
     font-size: 2rem;
     color: #fff;
-    /* changed to white */
     font-family: 'Arial', sans-serif;
 }
 
-/* Table */
 .feedback-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 12px;
     background-color: #000;
-    /* black background */
     color: #fff;
-    /* white text */
     font-family: 'Arial', sans-serif;
 }
 
-/* Table Header */
 .feedback-table th {
     background-color: #f6be18;
-    /* yellow header */
     color: #000;
-    /* black text */
     font-weight: 600;
     padding: 12px 16px;
     border: 1px solid #444;
     font-family: 'Arial', sans-serif;
 }
 
-/* Table Body */
 .feedback-table td {
     background-color: #111;
-    /* dark row background */
     color: #fff;
-    /* white text */
     padding: 12px 16px;
     border: 1px solid #333;
     text-align: center;
     font-family: 'Arial', sans-serif;
 }
 
-/* Alternate Row Styling */
 .feedback-table tbody tr:nth-child(even) {
     background-color: #1a1a1a;
     font-family: 'Arial', sans-serif;
 }
 
-/* Loading, Error, No Feedback */
 .loading,
 .error,
 .no-feedback {
@@ -72,12 +56,10 @@
     margin: 24px 0;
     font-size: 1.1rem;
     color: #fff;
-    /* changed to white */
     font-family: 'Arial', sans-serif;
 }
 
 .error {
     color: #ff4c4c;
-    /* red for error */
     font-weight: bold;
 }

@@ -84,7 +84,6 @@
     color: #fff;
 }
 
-/* --- Modal styles --- */
 .modal-backdrop {
     position: fixed;
     z-index: 99;

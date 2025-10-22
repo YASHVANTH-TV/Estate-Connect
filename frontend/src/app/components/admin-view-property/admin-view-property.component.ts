@@ -52,7 +52,6 @@ export class AdminViewPropertyComponent implements OnInit {
     this.route.navigate(['/admin-edit-property', propertyId]);
   }
 
-
   openDeleteModal(property: Property): void {
     this.deleteTarget = property;
   }
@@ -79,5 +78,3 @@ export class AdminViewPropertyComponent implements OnInit {
     });
   }
 }
-
-

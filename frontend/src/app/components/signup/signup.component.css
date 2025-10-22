@@ -35,12 +35,10 @@
     color: #f6be18;
     margin-bottom: 32px;
     font-size: 2.6rem;
-    /* Increased from 1.8rem */
     font-weight: 900;
     letter-spacing: 2px;
     font-family: 'Segoe UI', Arial, sans-serif;
 }
-
 
 form {
     width: 100%;

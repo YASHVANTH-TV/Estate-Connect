@@ -10,7 +10,6 @@
 }
 
 .edit-title {
-
     text-align: center;
     color: #f6be18;
     font-size: 2em;
@@ -32,7 +31,6 @@
 input,
 textarea,
 select {
-
     background: #232323;
     color: #fff;
     border: 1px solid #888;
@@ -48,7 +46,6 @@ select:focus {
 }
 
 .update-btn {
-
     background: #f6be18;
     color: #232323;
     font-weight: bold;
@@ -72,7 +69,6 @@ select:focus {
 }
 
 .success-popup {
-
     margin-top: 22px;
     background: #222;
     border-radius: 7px;
@@ -86,7 +82,6 @@ select:focus {
 }
 
 .modal-btn {
-
     margin-top: 12px;
     padding: 6px 22px;
     background: #eee237;

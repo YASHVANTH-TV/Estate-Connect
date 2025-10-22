@@ -149,13 +149,11 @@ select:focus {
     }
 }
 
-
 .form-group {
     margin-bottom: 18px;
     font-family: 'Arial', sans-serif;
 }
 
-/* Optional: Add spacing between label and input for better readability */
 label {
     color: #fff;
     display: block;

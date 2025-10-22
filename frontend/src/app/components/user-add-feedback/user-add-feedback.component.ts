@@ -28,13 +28,13 @@ export class UserAddFeedbackComponent implements OnInit {
   constructor(private feedbackService: FeedbackService, private propertyService: PropertyService, private router: Router) { }
 
   ngOnInit(): void {
-    this.propertyService.getAllProperties().subscribe((data) => {
-      this.properties = data;
-    },
+    this.propertyService.getAllProperties().subscribe(
+      (data) => {
+        this.properties = data;
+      },
       (error) => {
         this.errorMessage = 'Failed to load properties';
       })
-
     this.feedback.date = new Date().toISOString().substring(0, 10);
     this.feedback.user.userId = +localStorage.getItem("userId")
   }

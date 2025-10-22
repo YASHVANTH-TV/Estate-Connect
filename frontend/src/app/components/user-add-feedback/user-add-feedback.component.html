@@ -22,8 +22,7 @@
 
         <div class="form-group">
             <label for="property">Property:</label>
-            <select id="property" class="form-control" name="property" [(ngModel)]="feedback.property.propertyId"
-                required>
+            <select id="property" class="form-control" name="property" [(ngModel)]="feedback.property.propertyId" required>
                 <option value="" disabled selected>Select a property</option>
                 <option *ngFor="let p of properties" [value]="p.propertyId">
                     {{p.title}}

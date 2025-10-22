@@ -26,7 +26,6 @@ export class AdminViewFeedbackComponent implements OnInit {
   loadFeedbacks(): void {
     this.feedbackService.getFeedbacks().subscribe((data: Feedback[]) => {
       this.feedbacks = data;
-      // Extract unique categories for the filter dropdown
       this.categories = Array.from(new Set(data.map(fb => fb.category).filter(c => c)));
       this.filteredFeedbacks = [...this.feedbacks];
     }, (error: HttpErrorResponse) => {
