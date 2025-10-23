@@ -1,206 +1,128 @@
-body {
-    background: #f5f5f5;
-    font-family: 'Arial', sans-serif;
-}
-
-.navbar {
-    background: #161617;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 45px 18px 40px;
-    margin-bottom: 35px;
-    font-family: 'Arial', sans-serif;
-}
-
-.brand {
-    color: #ffe148;
-    font-weight: 600;
-    font-size: 20px;
-    font-family: 'Arial', sans-serif;
-}
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    font-family: 'Arial', sans-serif;
-}
-
-.user-badge {
-    background: #ffe148;
-    color: #161617;
-    font-weight: 600;
-    padding: 7px 13px;
-    border-radius: 3px;
-    margin-right: 10px;
-    font-size: 14px;
-    font-family: 'Arial', sans-serif;
-}
-
-.nav-link {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 10px;
-    font-size: 15px;
-    transition: color 0.2s;
-    font-family: 'Arial', sans-serif;
-}
-
-.nav-link:hover {
-    color: #ffe148;
-    font-family: 'Arial', sans-serif;
-}
-
-.logout-btn {
-    background: #ffe148;
-    color: #161617;
-    border: none;
-    padding: 7px 15px;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 3px;
-    font-size: 14px;
-    font-family: 'Arial', sans-serif;
-}
+/* ===============================
+   Submit Inquiry Card
+=============================== */
 
 .card {
-    background: #161617;
-    color: #ffe148;
-    padding: 30px 35px 20px 35px;
-    width: 330px;
-    margin: 35px auto 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.12);
-    position: relative;
-    font-family: 'Arial', sans-serif;
+    max-width: 500px;
+    margin: 3rem auto;
+    padding: 2rem 2.5rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Card Title */
 .card-title {
-    margin-bottom: 20px;
     text-align: center;
-    font-family: 'Arial', sans-serif;
-}
-
-.form-group {
-    margin-bottom: 18px;
-    font-family: 'Arial', sans-serif;
-}
-
-label {
-    color: #fff;
-    display: block;
-    margin-bottom: 8px;
-    font-size: 15px;
-    letter-spacing: 0.03em;
-    font-family: 'Arial', sans-serif;
-}
-
-input,
-select {
-    width: 100%;
-    padding: 8px 9px;
-    border-radius: 4px;
-    border: none;
-    margin-bottom: 3px;
-    font-size: 15px;
-    background: #232324;
-    color: #ffe148;
-    font-family: 'Arial', sans-serif;
-}
-
-input:focus,
-select:focus {
-    outline: 2px solid #ffe148;
-    font-family: 'Arial', sans-serif;
-}
-
-.submit-btn {
-    width: 100%;
-    background: #ffe148;
-    color: #232324;
+    font-size: 2rem;
     font-weight: 600;
+    color: #2980B9;
+    margin-bottom: 2rem;
+}
+
+/* Form Groups */
+.card .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+}
+
+.card label {
+    font-weight: 500;
+    color: #2C3E50;
+    margin-bottom: 0.4rem;
+}
+
+/* Inputs & Selects */
+.card input,
+.card select {
+    padding: 0.8rem 0.1rem;
+    font-size: 1rem;
+    border: 1px solid #cfd4da;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.25s ease;
+    width: 100%;
+    font-family: inherit;
+}
+
+.card input:focus,
+.card select:focus {
+    border-color: #2980B9;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.15);
+    outline: none;
+}
+
+/* Submit Button */
+.card .submit-btn {
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
     border: none;
-    padding: 10px 0;
-    border-radius: 4px;
-    font-size: 15px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.2s;
-    font-family: 'Arial', sans-serif;
-}
-
-.submit-btn:hover {
-    background: #fff9d5;
-    font-family: 'Arial', sans-serif;
-}
-
-@media (max-width: 480px) {
-    .card {
-        width: 95%;
-        padding: 18px 8px 15px 8px;
-        font-family: 'Arial', sans-serif;
-    }
-
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 12px 3px 12px 10px;
-        font-family: 'Arial', sans-serif;
-    }
-}
-
-.form-group {
-    margin-bottom: 18px;
-    font-family: 'Arial', sans-serif;
-}
-
-label {
+    background-color: #2980B9;
     color: #fff;
-    display: block;
-    margin-bottom: 8px;
-    font-size: 15px;
-    letter-spacing: 0.03em;
-    font-family: 'Arial', sans-serif;
+    transition: all 0.2s ease;
+    margin-top: 0.5rem;
 }
 
+.card .submit-btn:hover {
+    background-color: #2471A3;
+    transform: translateY(-2px);
+}
+
+/* Modal Styling */
 .custom-modal {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.3);
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
     display: flex;
-    align-items: center;
     justify-content: center;
-    z-index: 2000;
-    font-family: 'Arial', sans-serif;
+    align-items: center;
+    z-index: 999;
 }
 
-.modal-content {
+.custom-modal .modal-content {
     background: #fff;
-    padding: 32px 24px 24px 24px;
-    border-radius: 8px;
-    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.2);
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     text-align: center;
-    min-width: 300px;
-    font-family: 'Arial', sans-serif;
+    max-width: 400px;
+    width: 90%;
 }
 
-.modal-content p {
-    color: #34a853;
-    font-size: 18px;
-    margin-bottom: 20px;
-    font-family: 'Arial', sans-serif;
+.custom-modal .modal-content p {
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
 }
 
-.modal-content button {
-    background: #2196f3;
+.custom-modal .modal-content button {
+    background-color: #2980B9;
     color: #fff;
     border: none;
-    padding: 8px 32px;
-    border-radius: 4px;
-    font-size: 16px;
+    border-radius: 6px;
+    padding: 0.7rem 1.5rem;
     cursor: pointer;
-    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.custom-modal .modal-content button:hover {
+    background-color: #2471A3;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .card {
+        padding: 1.5rem 1.8rem;
+    }
+
+    .card-title {
+        font-size: 1.6rem;
+    }
 }

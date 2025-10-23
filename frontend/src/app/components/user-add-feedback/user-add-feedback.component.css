@@ -1,112 +1,111 @@
+/* ===============================
+   Feedback Form
+=============================== */
+
 .feedback-form-container {
-    background: #191919;
+    max-width: 500px;
+    margin: 3rem auto;
+    padding: 2rem 2.5rem;
+    background-color: #ffffff;
     border-radius: 12px;
-    margin: 40px auto;
-    max-width: 400px;
-    padding: 32px 28px 28px 28px;
-    box-shadow: 0 4px 24px 0 rgba(22, 20, 18, 0.11);
-    border: 1px solid #222;
-    font-family: 'Arial', sans-serif;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Heading */
 .feedback-heading {
     text-align: center;
-    color: #ffd700;
-    font-size: 1.7rem;
-    letter-spacing: 1px;
-    font-family: 'Arial', sans-serif;
-    margin-bottom: 28px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    font-family: 'Arial', sans-serif;
-}
-
-.form-group label {
-    font-weight: 500;
-    color: #ffd700;
-    margin-bottom: 6px;
-    letter-spacing: 0.5px;
-    font-family: 'Arial', sans-serif;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Arial', sans-serif;
-}
-
-.form-control,
-textarea,
-select {
-    padding: 8px 12px;
-    border: 1px solid #444;
-    border-radius: 6px;
-    background: #fff;
-    color: #000;
-    font-size: 1rem;
-    outline: none;
-    transition: 0.2s border;
-    margin-bottom: 2px;
-    font-family: 'Arial', sans-serif;
-}
-
-.form-control:focus,
-textarea:focus,
-select:focus {
-    border-color: #ffd700;
-    box-shadow: 0 0 3px #ffd70044;
-    font-family: 'Arial', sans-serif;
-}
-
-.btn.btn-warning {
-    background: linear-gradient(92deg, #ffd700, #ffb600);
-    color: #222;
+    font-size: 2rem;
     font-weight: 600;
+    color: #2980B9;
+    margin-bottom: 2rem;
+}
+
+/* Form Groups */
+.feedback-form-container .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.2rem;
+}
+
+.feedback-form-container label {
+    font-weight: 500;
+    color: #2C3E50;
+    margin-bottom: 0.4rem;
+}
+
+/* Inputs, Textareas, Selects */
+.feedback-form-container input,
+.feedback-form-container textarea,
+.feedback-form-container select {
+    padding: 0.8rem 0.1rem;
+    font-size: 1rem;
+    border: 1px solid #cfd4da;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.25s ease;
+    width: 100%;
+    font-family: inherit;
+}
+
+.feedback-form-container input:focus,
+.feedback-form-container textarea:focus,
+.feedback-form-container select:focus {
+    border-color: #2980B9;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.15);
+    outline: none;
+}
+
+/* Textarea */
+.feedback-form-container textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Button */
+.feedback-form-container .btn {
+    padding: 0.9rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
     border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #2980B9;
+    color: #fff;
+    transition: all 0.2s ease;
+    margin-top: 0.5rem;
+}
+
+.feedback-form-container .btn:hover {
+    background-color: #2471A3;
+    transform: translateY(-2px);
+}
+
+/* Success / Error Alerts */
+.feedback-form-container .alert {
+    padding: 0.8rem 1rem;
     border-radius: 6px;
-    padding: 10px 0;
-    transition: background 0.16s;
-    margin-top: 8px;
-    font-family: 'Arial', sans-serif;
+    font-size: 0.95rem;
 }
 
-.btn.btn-warning:hover {
-    background: linear-gradient(92deg, #ffb600, #ffd700);
-    color: #111;
-    font-family: 'Arial', sans-serif;
+.feedback-form-container .alert-success {
+    background-color: #dff0d8;
+    color: #27ae60;
 }
 
-.alert-success {
-    background: #232c16;
-    border-left: 5px solid #33d17a;
-    color: #33d17a;
-    padding: 10px 16px;
-    margin-top: 12px;
-    border-radius: 4px;
-    font-size: 1rem;
+.feedback-form-container .alert-danger {
+    background-color: #f8d7da;
+    color: #c0392b;
 }
 
-.alert-danger {
-    background: #2a171a;
-    border-left: 5px solid #ff2851;
-    color: #ffb6c1;
-    padding: 10px 16px;
-    margin-top: 12px;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-@media (max-width: 480px) {
+/* Responsive */
+@media (max-width: 600px) {
     .feedback-form-container {
-        max-width: 98vw;
-        padding: 18px 4vw;
+        padding: 1.5rem 1.8rem;
     }
 
     .feedback-heading {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
 }

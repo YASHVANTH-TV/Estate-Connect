@@ -1,141 +1,124 @@
+/* =========================
+   Signup / Login Container
+========================= */
 .signup-container {
     display: flex;
-    min-height: 100vh;
-    width: 100vw;
-    background: #181818;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    max-width: 1000px;
+    margin: 4rem auto;
+    background-color: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Left Image Container */
 .left-container {
-    flex: 1.2;
-    background: url('/assets/images/background.webp') center center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 340px;
+    flex: 1;
+    /* equal ratio with right container */
+    max-width: 50%;
+    /* do not grow larger than 50% */
+    min-width: 300px;
+    /* optional minimum width */
+    height: auto;
+    background: url('/assets/images/background.webp') no-repeat center center;
+    background-size: cover;
 }
 
-.left-container img {
-    display: none;
-}
-
+/* Right Form Container */
 .right-container {
     flex: 1;
-    background: rgba(10, 10, 10, 0.92);
+    max-width: 500px;
+    /* ensures image never grows bigger than form */
+    padding: 3rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 0 40px;
-    min-width: 340px;
-    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.15);
+    background-color: #f7f9fc;
 }
 
 .right-container h2 {
-    color: #f6be18;
-    margin-bottom: 32px;
-    font-size: 2.8rem;
-    letter-spacing: 1px;
-    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #2C3E50;
+    text-align: center;
 }
 
-form {
-    width: 100%;
-    max-width: 350px;
+.right-container form {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 1rem;
 }
 
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 14px 16px;
-    border-radius: 8px;
-    border: none;
-    background: #232323;
-    color: #fafafa;
-    font-size: 1.5rem;
+.right-container input {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.right-container input:focus {
+    border-color: #2980B9;
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.3);
     outline: none;
-    margin-bottom: 0;
-    transition: border 0.3s;
-    box-sizing: border-box;
-    border: 2px solid transparent;
 }
 
-input[type="email"]:focus,
-input[type="password"]:focus {
-    border: 2px solid #f6be18;
-    background: #292929;
+.right-container small {
+    color: #E74C3C;
+    font-size: 0.85rem;
 }
 
-small {
-    color: #f6be18;
-    font-size: 0.98rem;
-}
-
-div[ngIf="incorrectPassword"] small {
-    color: #ea2727;
-}
-
-button {
-    width: 100%;
-    margin-top: 10px;
-    padding: 12px;
-    background: #f6be18;
-    color: #191919;
+.right-container button {
+    padding: 0.8rem 1rem;
+    background-color: #2980B9;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
     border: none;
-    border-radius: 8px;
-    font-size: 1.45rem;
-    font-weight: bold;
-    letter-spacing: 1px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background .18s;
+    transition: background-color 0.2s, transform 0.1s;
 }
 
-button:hover {
-    background: #f6be18;
-    color: #131313;
+.right-container button:hover {
+    background-color: #2471A3;
+    transform: translateY(-2px);
 }
 
-p {
-    margin-top: 24px;
+.right-container p {
     text-align: center;
-    font-size: 1.5rem;
-    color: #d7d7d7;
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    color: #34495E;
 }
 
-p span a {
+.right-container p a {
+    color: #2980B9;
     text-decoration: none;
-    color: #f6be18;
-    font-weight: bold;
-    transition: color 0.22s;
+    font-weight: 500;
 }
 
-p span a:hover {
-    color: #f6be18;
+.right-container p a:hover {
+    text-decoration: underline;
 }
 
-@media (max-width: 850px) {
+/* =========================
+   Responsive Styles
+========================= */
+@media (max-width: 992px) {
     .signup-container {
         flex-direction: column;
-        align-items: stretch;
-    }
-
-    .left-container,
-    .right-container {
-        min-width: 100vw;
     }
 
     .left-container {
-        min-height: 250px;
-        flex: unset;
-        height: 38vw;
+        width: 100%;
+        height: 200px;
+        /* optional height for stacked image */
     }
 
     .right-container {
-        box-shadow: none;
-        padding: 32px 12px;
-        min-height: unset;
+        width: 100%;
+        padding: 2rem 1.5rem;
     }
 }

@@ -1,166 +1,216 @@
-body {
-    background: #181818;
-    color: #f6be18;
+/* ===============================
+   Explore Properties Page Styling
+=============================== */
+
+.property-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-h2 {
-    color: #fff;
+/* ===============================
+   Header
+=============================== */
+.property-container h2 {
     text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 40px;
-    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    color: #2C3E50;
+    margin-bottom: 2rem;
+    font-weight: 600;
 }
 
-.noprop {
-    color: #f6be18;
-    margin-top: 20px;
-    font-size: 16px;
-    text-align: center;
-    font-family: 'Arial', sans-serif;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #131313;
-    padding: 1rem 2rem;
-    color: #f6be18;
-    font-family: 'Arial', sans-serif;
-}
-
-.brand {
-    font-weight: bold;
-    font-size: 1.3rem;
-    font-family: 'Arial', sans-serif;
-}
-
-.nav-links {
-    display: flex;
-    gap: 1rem;
-    font-family: 'Arial', sans-serif;
-}
-
-.nav-btn {
-    background: #f6be18;
-    color: #131313;
-    border: none;
-    padding: 0.4rem 0.9rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 500;
-    font-family: 'Arial', sans-serif;
-}
-
-.logout {
-    background: #ee1e1e;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-}
-
-.property-container {
-    background: #232323;
-    margin: 2rem auto;
-    padding: 2rem;
-    max-width: 1200px;
-    border-radius: 10px;
-    box-shadow: 0 0 16px rgba(30, 30, 30, 0.2);
-    font-family: 'Arial', sans-serif;
-}
-
+/* ===============================
+   Filters Section
+=============================== */
 .filters {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: #1a1a1a;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(255, 224, 102, 0.05);
-    font-family: 'Arial', sans-serif;
+    margin-bottom: 2.5rem;
 }
 
 .filters input,
 .filters select {
-    background: #1f1f1f;
-    color: #f6be18;
-    border: 1px solid #f6be18;
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 1rem;
     border-radius: 8px;
-    font-size: 15px;
-    flex: 1 1 200px;
-    box-shadow: 0 2px 6px rgba(255, 224, 102, 0.1);
-    transition: all 0.3s ease;
-    font-family: 'Arial', sans-serif;
-}
-
-.filters input::placeholder {
-    color: #f6be18;
-    font-family: 'Arial', sans-serif;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 220px;
 }
 
 .filters input:focus,
 .filters select:focus {
+    border-color: #2980B9;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.3);
     outline: none;
-    border-color: #f6be18;
-    box-shadow: 0 0 10px rgba(255, 224, 102, 0.4);
-    background: #262626;
-    font-family: 'Arial', sans-serif;
 }
 
-.filters label {
-    color: #f6be18;
-    font-weight: 500;
-    margin-bottom: 0.3rem;
-    font-size: 14px;
-    font-family: 'Arial', sans-serif;
-}
-
-.property-container>div {
-    display: flex;
-    flex-wrap: wrap;
+/* ===============================
+   Property Cards Grid
+=============================== */
+.property-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1rem;
-    justify-content: center;
-    font-family: 'Arial', sans-serif;
 }
 
+/* Property Card */
 .property-card {
-    background: #181818;
-    color: #f6be18;
-    padding: 1rem;
-    margin: 0.5rem;
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 224, 102, 0.1);
-    width: 280px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.3s ease;
-    font-family: 'Arial', sans-serif;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .property-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 16px rgba(255, 224, 102, 0.2);
-    font-family: 'Arial', sans-serif;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-.inquire-btn {
-    background: #f6be18;
-    color: #181818;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
+.property-card h3 {
+    color: #2980B9;
+    font-size: 1.4rem;
     font-weight: 600;
-    cursor: pointer;
+    margin-bottom: 0.6rem;
+}
+
+.property-card p {
+    color: #34495E;
+    margin: 0.3rem 0;
+    font-size: 0.96rem;
+    line-height: 1.4;
+}
+
+.property-card strong {
+    color: #2C3E50;
+}
+
+/* Inquire Button */
+.inquire-btn {
     margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #2980B9;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
     align-self: flex-start;
-    font-family: 'Arial', sans-serif;
 }
 
 .inquire-btn:hover {
-    background: #f6be18;
-    color: #000;
-    font-family: 'Arial', sans-serif;
+    background-color: #2471A3;
+    transform: scale(1.05);
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+    .property-cards-wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .property-cards-wrapper {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .property-cards-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===============================
+   Inquire Button
+=============================== */
+.inquire-btn {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #2980B9;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.inquire-btn:hover {
+    background-color: #2471A3;
+    transform: scale(1.05);
+}
+
+/* ===============================
+   No Property Message
+=============================== */
+.noprop {
+    text-align: center;
+    color: #7F8C8D;
+    font-size: 1.1rem;
+    margin-top: 3rem;
+    font-style: italic;
+}
+
+/* ===============================
+   Responsive Design
+=============================== */
+@media (max-width: 1024px) {
+    .property-container {
+        padding: 1.5rem;
+    }
+
+    .filters input,
+    .filters select {
+        width: 200px;
+    }
+
+    .property-card {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filters input,
+    .filters select {
+        width: 90%;
+    }
+
+    .property-card {
+        text-align: center;
+    }
+
+    .inquire-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .property-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .property-card h3 {
+        font-size: 1.2rem;
+    }
 }

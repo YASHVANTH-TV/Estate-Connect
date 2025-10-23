@@ -1,75 +1,98 @@
+/* =========================
+   Navbar Base Styles
+========================= */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #1d1d1d;
-    padding: 10px 24px;
-    margin-bottom: 16px;
-    font-family: 'Arial', sans-serif;
+    padding: 0.8rem 2rem;
+    background-color: #2C3E50;
+    /* dark professional color */
+    color: #ECF0F1;
+    /* light text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 96%;
 }
 
-.brand {
+/* Brand Styling */
+.navbar .brand {
+    font-size: 1.6rem;
     font-weight: bold;
-    font-size: 1.2rem;
-    color: #f4f3ed;
     letter-spacing: 1px;
-    font-family: 'Arial', sans-serif;
+    color: #ECF0F1;
 }
 
-.brand.user {
-    color: #f6be18;
-    font-family: 'Arial', sans-serif;
-}
-
-.brand.user span {
+.navbar .brand.user {
     font-weight: bold;
-    color: #f6be18;
-    font-family: 'Arial', sans-serif;
 }
 
-.links {
+/* Links Container */
+.navbar .links {
     display: flex;
     align-items: center;
-    gap: 18px;
-    font-family: 'Arial', sans-serif;
+    gap: 1.2rem;
 }
 
-.highlight {
-    background: #222;
-    border: 1px solid #f6be18;
-    color: #f6be18;
-    padding: 4px 10px;
-    border-radius: 4px;
-    margin-right: 10px;
-    font-weight: bold;
-    font-family: 'Arial', sans-serif;
+/* Highlight text */
+.navbar .links .highlight {
+    font-weight: 600;
+    color: #F39C12;
+    /* highlight color */
+    margin-right: 1rem;
 }
 
-.links a {
-    color: #bbb;
+/* Links Styling */
+.navbar .links a {
     text-decoration: none;
-    font-size: 1rem;
-    margin: 0 6px;
-    transition: color 0.2s;
-    font-family: 'Arial', sans-serif;
+    color: #ECF0F1;
+    font-weight: 500;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
 }
 
-.links a:hover {
-    color: #eee237;
-    font-family: 'Arial', sans-serif;
+.navbar .links a:hover {
+    background-color: #34495E;
+    color: #F39C12;
 }
 
-.logout-btn {
-    background: #f6be18;
-    color: #1d1d1d;
+/* Logout Button Styling */
+.navbar .links .logout-btn {
+    padding: 0.4rem 0.8rem;
+    background-color: #E74C3C;
+    color: #fff;
     border: none;
-    padding: 6px 14px;
-    border-radius: 3px;
-    font-weight: bold;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background 0.2s;
+    font-weight: 500;
+    transition: background-color 0.2s;
 }
 
-.logout-btn:hover {
-    background: #cfa600;
+.navbar .links .logout-btn:hover {
+    background-color: #C0392B;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .navbar .links {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        margin-top: 0.6rem;
+    }
+
+    .navbar .links a,
+    .navbar .links .logout-btn {
+        font-size: 0.95rem;
+    }
+
+    .navbar .brand {
+        font-size: 1.4rem;
+    }
 }

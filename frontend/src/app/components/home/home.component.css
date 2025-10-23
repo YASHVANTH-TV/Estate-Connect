@@ -1,155 +1,121 @@
-body {
-    margin: 0;
-    padding: 0;
-    background: #fff;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: #222;
-}
-
+/* =========================
+   Banner Styles
+========================= */
 .banner {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    background-image: url('/assets/images/homepage.webp');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.banner-strip {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    padding: 24px 32px;
-    max-width: 700px;
+    width: 98%;
+    background: linear-gradient(135deg, #2980B9, #6DD5FA);
+    color: #fff;
+    padding: 3rem 1rem;
     text-align: center;
 }
 
-.banner-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #9B7B1B;
-}
-
-.banner-title .highlight {
-    color: #E4A900;
-    font-weight: bold;
-}
-
-.banner-desc {
-    font-size: 1rem;
-    color: #444;
-    margin-top: 12px;
-}
-
-.content {
+.banner-strip {
+    max-width: 1200px;
     margin: 0 auto;
-    max-width: 900px;
-    padding-top: 16px;
 }
 
+.banner-center .banner-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.banner-center .highlight {
+    color: #F39C12;
+    /* consistent highlight color */
+}
+
+.banner-center .banner-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+/* =========================
+   About Section
+========================= */
 .about-section {
-    margin-top: 36px;
-    margin-bottom: 24px;
-    text-align: left;
-    position: relative;
-}
-
-.section-line {
-    border: 0;
-    border-top: 2px solid #E4A900;
-    margin: 8px 0;
+    max-width: 1000px;
+    margin: 4rem auto;
+    text-align: center;
+    padding: 0 1rem;
+    color: #2C3E50;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .about-section h3 {
-    margin-top: 0;
-    color: #222;
-    font-size: 1.05rem;
+    font-size: 1.8rem;
     font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 .about-section p {
     font-size: 1rem;
-    color: #3c3c3c;
-    letter-spacing: 0.01em;
-    margin-bottom: 0;
+    line-height: 1.7;
+    color: #34495E;
 }
 
-.about-section .highlight {
-    color: #B38C1D;
-    font-weight: bold;
+.section-line {
+    border: 0;
+    height: 2px;
+    background: #F39C12;
+    width: 80px;
+    margin: 1.5rem auto;
 }
 
+/* =========================
+   Contact Card
+========================= */
 .contact-card {
-    background: #1c232e;
-    color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px #ccc7;
-    width: 55%;
     max-width: 600px;
-    margin: 32px auto 12px auto;
-    padding: 18px 20px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.contact-card p {
-    margin: 8px 0;
-    font-size: 1rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    margin: 3rem auto;
+    background-color: #ECF0F1;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    color: #2C3E50;
+    text-align: left;
 }
 
 .contact-card h4 {
-    margin: 0 0 10px 0;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: 600;
-    color: #F9D149;
-    text-align: center;
+}
+
+.contact-card p {
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .contact-card .icon {
-    margin-right: 9px;
+    font-weight: bold;
+    color: #F39C12;
 }
 
-.instructions {
-    margin: 28px 0 0 0;
-    font-size: 1.07rem;
-    color: #1B163A;
-    padding-bottom: 48px;
-}
-
-@media (max-width: 900px) {
-    .banner-strip {
-        margin: 0 3vw;
+/* =========================
+   Responsive Styles
+========================= */
+@media (max-width: 768px) {
+    .banner-center .banner-title {
+        font-size: 1.8rem;
     }
 
-    .content {
-        max-width: 98vw;
-        padding-left: 8px;
-        padding-right: 8px;
+    .banner-center .banner-desc {
+        font-size: 0.95rem;
     }
 
-    .about-section {
-        font-size: 0.97rem;
-    }
-}
-
-@media (max-width: 650px) {
-    .banner-strip {
-        flex-direction: column;
-        margin: 0 0.5vw;
+    .about-section h3 {
+        font-size: 1.5rem;
     }
 
-    .banner-img-left,
-    .banner-img-right {
-        display: none;
-    }
-
-    .banner-center {
-        padding: 14px 7px;
+    .contact-card {
+        padding: 1.5rem;
     }
 }

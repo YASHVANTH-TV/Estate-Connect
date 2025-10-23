@@ -48,20 +48,22 @@
         <input type="text" [(ngModel)]="searchBuilder" (input)="applyFilters()" placeholder="Search by Builder" />
     </div>
 
-    <div *ngIf="filteredProperties.length > 0; else noProperties">
-        <div class="property-card" *ngFor="let property of filteredProperties">
-            <h3>{{ property.title }}</h3>
-            <p>{{ property.description }}</p>
-            <p><strong>Location:</strong> {{ property.location }}</p>
-            <p><strong>Price:</strong> ${{ property.price | number }}</p>
-            <p><strong>Type:</strong> {{ property.type }}</p>
-            <p><strong>Status:</strong> {{ property.status }}</p>
-            <p *ngIf="property.vaastu"><strong>Vaastu:</strong> {{ property.vaastu }}</p>
-            <p *ngIf="property.riseType"><strong>Rise Type:</strong> {{ property.riseType }}</p>
-            <p *ngIf="property.floor !== undefined"><strong>Floor:</strong> {{ property.floor }}</p>
-            <p *ngIf="property.techType"><strong>Tech Type:</strong> {{ property.techType }}</p>
-            <p *ngIf="property.builder"><strong>Builder:</strong> {{ property.builder }}</p>
-            <button class="inquire-btn" (click)="navigateToAddInquiry(property.propertyId)">Inquire</button>
+    <div class="property-cards-wrapper">
+        <div *ngIf="filteredProperties.length > 0; else noProperties">
+            <div class="property-card" *ngFor="let property of filteredProperties">
+                <h3>{{ property.title }}</h3>
+                <p>{{ property.description }}</p>
+                <p><strong>Location:</strong> {{ property.location }}</p>
+                <p><strong>Price:</strong> ${{ property.price | number }}</p>
+                <p><strong>Type:</strong> {{ property.type }}</p>
+                <p><strong>Status:</strong> {{ property.status }}</p>
+                <p *ngIf="property.vaastu"><strong>Vaastu:</strong> {{ property.vaastu }}</p>
+                <p *ngIf="property.riseType"><strong>Rise Type:</strong> {{ property.riseType }}</p>
+                <p *ngIf="property.floor !== undefined"><strong>Floor:</strong> {{ property.floor }}</p>
+                <p *ngIf="property.techType"><strong>Tech Type:</strong> {{ property.techType }}</p>
+                <p *ngIf="property.builder"><strong>Builder:</strong> {{ property.builder }}</p>
+                <button class="inquire-btn" (click)="navigateToAddInquiry(property.propertyId)">Inquire</button>
+            </div>
         </div>
     </div>
 </div>
