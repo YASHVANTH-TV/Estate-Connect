@@ -45,7 +45,12 @@ public class SecurityConfig {
                 .cors(Customizer.withDefaults())
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/login", "/api/auth/register", "/db/**").permitAll()
+                        .requestMatchers(
+                                "/api/auth/login", "/api/auth/register", "/db/**",
+                                "/", "/index.html", "/favicon.ico", "/assets/**",
+                                "/**/*.js", "/**/*.css", "/**/*.ico", "/**/*.webp",
+                                "/{path:[^\\.]*}", "/**/{path:[^\\.]*}")
+                        .permitAll()
 
                         .requestMatchers(HttpMethod.POST, PROPERTIES).hasRole(ADMIN)
                         .requestMatchers(HttpMethod.GET, PROPERTY_BY_ID).permitAll()
