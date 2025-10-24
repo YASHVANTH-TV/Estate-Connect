@@ -4,13 +4,14 @@ import { User } from '../models/user.model';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Login } from '../models/login.model';
 import { tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private API_URL: string = 'http://localhost:8080';
+  private API_URL: string = environment.apiUrl;
 
   private roleSubject = new BehaviorSubject<string | null>(null);
   private firstNameSubject = new BehaviorSubject<string | null>(null);
