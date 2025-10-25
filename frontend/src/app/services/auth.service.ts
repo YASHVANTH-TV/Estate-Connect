@@ -4,13 +4,14 @@ import { User } from '../models/user.model';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Login } from '../models/login.model';
 import { tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private API_URL: string = 'http://localhost:8080';
+  private API_URL: string = environment.apiUrl;
 
   private roleSubject = new BehaviorSubject<string | null>(null);
   private firstNameSubject = new BehaviorSubject<string | null>(null);
@@ -29,11 +30,11 @@ export class AuthService {
   }
 
   register(user: User): Observable<any> {
-    return this.client.post(`${this.API_URL}/api/auth/register`, user);
+    return this.client.post(`${this.API_URL}/auth/register`, user);
   }
 
   login(login: Login): Observable<any> {
-    return this.client.post(`${this.API_URL}/api/auth/login`, login).pipe(
+    return this.client.post(`${this.API_URL}/auth/login`, login).pipe(
       tap(response => {
         if (response && response.token) {
           localStorage.setItem('token', response.token);
